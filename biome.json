@@ -1,18 +1,17 @@
 {
-  "$schema": "https://biomejs.dev/schemas/1.9.4/schema.json",
-  "organizeImports": {
-    "enabled": false
-  },
+  "root": false,
+  "$schema": "https://biomejs.dev/schemas/2.2.0/schema.json",
+  "assist": { "actions": { "source": { "organizeImports": "off" } } },
   "files": {
-    "include": ["**/*.js"],
-    "ignore": [
-      "**/target/**",
-      "**/node_modules/**",
-      "**/crates/**",
-      "**/server/**",
-      "**/frontend/**",
-      "*.css",
-      "*.rs"
+    "includes": [
+      "**/*.js",
+      "!**/target",
+      "!**/node_modules",
+      "!**/crates",
+      "!**/server",
+      "!**/frontend",
+      "!**/*.css",
+      "!**/*.rs"
     ]
   },
   "linter": {
@@ -42,7 +41,8 @@
         "noAssignInExpressions": "off",
         "noImplicitAnyLet": "off",
         "noSuspiciousSemicolonInJsx": "warn",
-        "noGlobalIsNan": "warn"
+        "noGlobalIsNan": "warn",
+        "noVar": "warn"
       },
       "style": {
         "noUselessElse": "warn",
@@ -51,9 +51,7 @@
         "useSingleVarDeclarator": "warn",
         "useConst": "warn",
         "noParameterAssign": "warn",
-        "useNumberNamespace": "warn",
-        "noVar": "warn",
-        "noCommaOperator": "warn"
+        "useNumberNamespace": "warn"
       },
       "security": {
         "noDangerouslySetInnerHtml": "off"
@@ -61,7 +59,8 @@
       "complexity": {
         "noBannedTypes": "off",
         "noForEach": "off",
-        "useLiteralKeys": "warn"
+        "useLiteralKeys": "warn",
+        "noCommaOperator": "warn"
       },
       "performance": {
         "noAccumulatingSpread": "off"
