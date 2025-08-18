@@ -87,6 +87,9 @@
   body {
     @apply bg-background text-foreground;
   }
+  .container {
+    @apply px-4 mx-auto max-w-screen-2xl xl:px-6;
+  }
 
   button:not(:disabled),
   [role="button"]:not(:disabled) {
