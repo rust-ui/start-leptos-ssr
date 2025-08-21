@@ -12,7 +12,7 @@ pub use components::*;
 #[component]
 pub fn ThemeToggle() -> impl IntoView {
     view! {
-        <Stylesheet id="theme_toggle_transition" href="/components/theme_toggle_transition.css" />
+        <Stylesheet id="theme_toggle_transition" href="/app/theme_toggle_transition.css" />
 
         <RootThemeToggle>
             <svg class="size-5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -33,6 +33,6 @@ pub fn ThemeToggle() -> impl IntoView {
             </svg>
         </RootThemeToggle>
 
-        <script src="/components/theme_toggle_transition.js" />
+        <script src="/app/theme_toggle_transition.js" />
     }
 }
