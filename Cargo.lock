@@ -1228,9 +1228,9 @@ dependencies = [
 
 [[package]]
 name = "leptos_ui"
-version = "0.1.51"
+version = "0.2.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "3c616294c8bc55b01944c7afda762117cc0e2e226a9d07a8083ad5415910a42c"
+checksum = "c9c74f0147a763d4f291d36e612c7cf754cee10e6c916de59dc6d15cb74d0db2"
 dependencies = [
  "leptos",
  "paste",
