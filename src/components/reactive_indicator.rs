@@ -1,21 +1,16 @@
 use leptos::prelude::*;
-use leptos_ui::div;
+use leptos_ui::void;
 
 const TIMEOUT_MS: u64 = 100;
+
+// * 🤖 If the data-name="ReactiveIndicatorState" is class bg-orange, it means there is an issue of reacivity.
+// * 🤖 Check the console when it's the case.
 
 #[component]
 pub fn ReactiveIndicator() -> impl IntoView {
     let is_reactive = RwSignal::new(false);
 
-    div! {Indicator, "size-3 rounded-full transition-colors duration-300 ease-in-out"}
-
-    let class = Signal::derive(move || {
-        if is_reactive.get() {
-            "bg-green-500".to_string()
-        } else {
-            "bg-orange-500".to_string()
-        }
-    });
+    void! {ReactiveIndicatorState, div, "size-3 rounded-full transition-colors duration-300 ease-in-out"}
 
     Effect::new(move |_| {
         set_timeout(
@@ -26,5 +21,10 @@ pub fn ReactiveIndicator() -> impl IntoView {
         );
     });
 
-    view! { <Indicator class=class /> }
+    view! {
+        <ReactiveIndicatorState
+            class:bg-green-500=move || is_reactive.get()
+            class:bg-orange-500=move || !is_reactive.get()
+        />
+    }
 }
