@@ -7,12 +7,13 @@ edition = "2021"
 crate-type = ["cdylib", "rlib"]
 
 [dependencies]
+leptos_ui = "0.3"
+
 cfg-if = "1"
 http = "1"
 leptos = { version = "0.8", features = ["nightly"] }
 leptos_meta = "0.8"
 leptos_router = { version = "0.8", features = ["nightly"] }
-leptos_ui = "0.2"
 log = "0.4"
 thiserror = "2"
 tw_merge = { version = "0.1", features = ["variant", "debug"] }
